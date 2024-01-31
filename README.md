@@ -28,3 +28,5 @@ The <b>questionnaire</b> directory contains scripts that were run to process, an
 In <b>analysis.ipynb</b>, scripts can be run to visualize some of the data or observe parts of it.
 
 <b>codes.ipynb</b> was an approach toward counting code appearances. This approach was not followed further but the code remains part of the work that has been done.
+
+<b>evalanalysis.ipynb</b>, contains a few scripts that can be run to visualize some of the data from the evaluation session or observe parts of it.
