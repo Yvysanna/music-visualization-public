@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jsons/short_tracks.js"></script>
+    <h1>Bar Chart HTML</h1>
+    <!--https://www.coding-dude.com/wp/html5/bar-chart-html/-->
+</head>
+<body>
+    <div class="chart-wrap vertical">
+    <h2 class="title">Bar Chart:  Using Only HTML And CSS</h2>
+    
+    <div class="grid">
+        <div class="bar" style="--bar-value:85%;" data-name="acousticness" title="acousticness"></div>
+        <div class="bar" style="--bar-value:23%;" data-name="danceability" title="danceability"></div>
+        <div class="bar" style="--bar-value:7%;" data-name="energy" title="energy"></div>
+        <div class="bar" style="--bar-value:30%;" data-name="valence" title="valence"></div>
+        <div class="bar" style="--bar-value:38%;" data-name="instrumentalness" title="instrumentalness"></div>
+        <div class="bar" style="--bar-value:35%;" data-name="liveness" title="liveness"></div>
+        <div class="bar" style="--bar-value:30%;" data-name="speechiness" title="speechiness"></div>
+    </div>
+    </div>
+    <script>
+        const data = short_tracks;
+        const acousticness = data[0].acousticness;
+        const danceability = data[0].danceability;
+        const energy = data[0].energy;
+        const valence = data[0].valence;
+        const instrumentalness = data[0].instrumentalness;
+        const liveness = data[0].liveness;
+        const speechiness = data[0].speechiness;
+
+        const bars = document.querySelectorAll('.bar');
+        bars.forEach(function(bar){
+            const barValue = bar.dataset.name;
+            bar.style.setProperty(`--bar-value:${(barValue * 100)}`);
+        });
+    </script>
+</body>
+</html>

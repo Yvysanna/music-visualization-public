@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Info</title>
+    <style>
+        #track-image {
+            float: left;
+            width: 300px;
+            height: 300px;
+        }
+
+        #track-info {
+            display: inline-block;
+            width: 50%;
+            height: 300px;
+            padding: 10px;
+        }
+
+        #grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            gap: 5px;
+        }    
+        
+        #grid-container img {
+            width: 250px;
+            height: 250px;
+        }
+
+        #grid-container #delete {
+            display: 'none';
+            color: 'white';
+            position: 'absolute';
+            top: '50%';
+            left: '50%';
+            transform: 'translate(-50%, -50%)';
+            text-align: 'center';
+        }
+    </style>
+    <script src="track-info-data.js"></script>
+</head>
+<body>
+    <section id="track-info">
+        <span><img id="track-image" src="https://i.scdn.co/image/ab67616d0000b2734756c2e9ae436437cd75e9f3" alt="image-cover"></img></span>
+        <ul>
+            <li>Track Name: <span id="track-name">Track Name</span></li>
+            <li>Artist: <span id="track-artist">Track Artist</span></li>
+            <li>Link: <a id="track-url" href="https://open.spotify.com/artist/7uMDnSZyUYNBPLhPMNuaM2">Open Spotify</a></li>
+        </ul>
+    </section>
+    <label for="img-upload">Local Images +</label>
+    <input type="file" id="img-upload" style="display:none"></input>
+
+    <!-- Add images from url too-->
+    <label for="img-url">Or Enter Image URL:</label>
+    <input type="text" id="img-url"></input>
+
+    <!-- End of the test -->
+    <button id="upload-button">Upload</button>
+    <div id="grid-container">
+    </div>
+
+
+    
+    <!-- Add more elements here to display other track information -->
+    <script src="track-info.js"></script>
+</body>
+</html>

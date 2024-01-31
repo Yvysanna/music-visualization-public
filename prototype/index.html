@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Spotify Profile</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="index_style.css">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+        <!-- <script src="jsons/short_tracks.js"></script>
+        <script src="jsons/medium_tracks.js"></script>
+        <script src="jsons/long_tracks.js"></script> -->
+
+        <script src="script.js"></script>
+        <script src="side_by_side.js"></script>
+        <script src="track-info.js"></script>
+        <!-- <script src="json_data.js"></script> -->
+        <!-- <script src="images.js"></script> -->
+        <script id="myitem" type="json" src="users-current.json"></script>
+    </head>
+    <body>
+        <ul class="menu">
+            <li><a class="active" href="#" id="top-view">Top View</a></li>
+            <li><a href="#" id="short-view">Last Month Overview</a></li>
+            <li><a href="#" id="medium-view">Last Six Months Overview</a></li>
+            <li><a href="#" id="long-view">All Time Overview</a></li>
+            <!-- <li style="float:right" id="about"><a href="#">About</a></li> -->
+        </ul>
+        <div id="floating-div" style="width:930px; height:800px; display:none; position:absolute"></div>
+        <section id="main-container">
+            <div id="main-info">
+                <div class="main-description">
+                    <h1 id="main-title">Top View</h1>
+                    <p id="main-description">This view displays your personal top 4 most listened tracks for one month (short term), six months (medium term) and of all time you use Spotify for (long term). Below you can find a graph that displays various audio features based on your average 50 most listened songs for the different periods. If you click on any cover image of a song, you will be led to that song's more detailed information page. If you click on one of the periods, you will find an overview of your 50 most listened songs for that period.</p>
+                </div>
+            <div id="image-container">
+                <div>
+                    <div id="short-container" class="container-images"></div>
+                    <button id="short-button" class="button">Short Term</button>
+                </div>
+                <div>
+                    <div id="medium-container" class="container-images"></div>
+                    <button id="medium-button" class="button">Medium Term</button>
+                </div>
+                <div>
+                    <div id="long-container" class="container-images"></div>
+                    <button id="long-button" class="button">Long Term</button>
+                </div>
+            </div>
+            <canvas id="mainChart" width="400px" height="400px"></canvas>
+        </section>
+        
+        <!-- <script src="images.js"></script> -->
+        <!-- Add this where you want the info icon to appear -->
+
+       
+
+        <!--Track info HTML-->
+        <div id="img-adder" style="display: none;">
+            <section id="track-info" track-id="" class="track-info-layout">
+                <span>
+                    <audio id="myAudio" src="" preload="auto"></audio>
+                    <img id="track-image" src="https://i.scdn.co/image/ab67616d0000b2734756c2e9ae436437cd75e9f3" alt="image-cover"></img>
+                </span>
+                <ul class="track-data">
+                    <li><b>Track Name:</b> <span id="track-name">Track Name</span></li>
+                    <li><b>Artist(s):</b> <span id="track-artist">Track Artist</span></li>
+                    <li><b>Album:</b> <span id="track-album">Track Album</span></li>
+                    <li><b>Duration:</b> <span id="track-duration">Track Duration</span></li>
+                    <li>
+                        <span class="info-icon" title="The key of the track based on standard pitch notation">
+                            <i class="fas fa-info-circle"></i>
+                        </span>
+                            <b>Key:</b>
+                        <span id="track-key">Track Key</span>
+                    </li>
+                    
+                    <li>
+                        <span class="info-icon" title="Modality of the track (minor or major)">
+                            <i class="fas fa-info-circle"></i>
+                        </span>
+                            <b>Mode:</b> 
+                        <span id="track-mode">Track Mode</span>
+                    </li>
+        
+                    <li>
+                        <span class="info-icon" title="The overall estimated tempo of a track in beats per minute (bpm)">
+                            <i class="fas fa-info-circle"></i>
+                        </span>
+                            <b>Tempo:</b> 
+                        <span id="track-tempo">Track Tempo</span>
+                    </li>
+
+                    <li>
+                        <span class="info-icon" title="The estimated time signature of the track (eg. 3/4)">
+                            <i class="fas fa-info-circle"></i>
+                        </span>
+                            <b>Signature:</b> 
+                        <span id="track-signature">Track Signature</span>
+                    </li>
+
+                    <!-- <li>Link: 
+                        <a id="track-url" href="https://open.spotify.com/artist/7uMDnSZyUYNBPLhPMNuaM2">Open Spotify</a>
+                    </li> -->
+                    <li>
+                        <!-- Add images from url too-->
+                        <label for="img-url">Enter image URL to add images:</label>
+                        <input type="text" id="img-url"></input>
+                        <!-- <button id="upload-button">Upload</button> -->
+                    </li>
+                </ul>
+            
+                <canvas id="tracks-audio-features" max-width="400px" max-height="400px"></canvas>
+
+            </section>
+            
+            <div id="grid-container">
+                <div id="add-image">
+                    <input type="file" id="img-upload" style="display:none"></input> 
+                    <label for="img-upload"><span>+</span></label>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

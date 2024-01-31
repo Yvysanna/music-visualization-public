@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<link rel="stylesheet" href="style.css">
+<body>
+       <ul id="contextMenu" style="display:none;">
+          <li class="menu-item">
+             <label for="imageinput">Load Image...&#x1F50E;&#xFE0E;</label>
+          </li>
+       </ul>
+       <input type="file" style="opacity: 0" id="imageinput" accept="image/*"/>
+       <div class="navigation center">
+         <canvas id="myChart"></canvas>
+      <input type="radio" name="navi" id="firstPage"  value="   0" />
+      <input type="radio" name="navi" id="prevXPages" value=" -10" />
+      <input type="radio" name="navi" id="prevPage"   value=" - 1" />
+      <input type="radio" name="navi" id="nextPage"   value=" + 1" />
+      <input type="radio" name="navi" id="nextXPages" value=" +10" />
+      <input type="radio" name="navi" id="lastPage"   value="  99" />
+
+ 
+      <label for="firstPage"> |&#8920; </label>
+      <label for="prevXPages"> &#8810; </label>
+      <label for="prevPage">   &#9664; </label>
+      <label for="nextPage">   &#9654; </label>
+      <label for="nextXPages"> &#8811; </label>
+      <label for="lastPage">   &#8921;|</label>
+      <input type="text" name="info" id="pageInfo" value="0 / 99" disabled/>
+      
+      <input class="c-checkbox" type="checkbox" id="checkbox">
+    </div>
+<script src="music_features.js">
+</script>
+</body>
+</html>
